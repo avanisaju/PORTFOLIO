@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="logo.png" class="logo">
+                <ul>
+                    <li><a href="#header" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Education & Skills</a></li>
+                    <li><a href="#contact">contact</a></li>
+                    
+                </ul>
+            </nav>
+            <div class="header-text">
+                
+                <p>Data Analyst</p>
+            
+                <h1>Hi, I'm <span>Avani Saju</span></h1>
+                <a href="#" class="btn">Hire Me</a>
+            </div>
+        </div>
+    </div>
+
+    <!-----------about------- -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                <img src="im1.jpg">
+            </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p> I am a data analytics fresher with a passion for uncovering insights and making data-driven decisions. My journey into data analytics began with a fascination for numbers and patterns. I have a solid foundation in statistical analysis, data manipulation, and visualization techniques. </p>
+
+                  
+                </div>
+                
+            </div>
+        </div>
+    </div><br></br>
+
+  
+
+<!-- skill education-->
+<div class="skills" id="skills">
+    <h2 class="heading1">Education and Skills</h2><br></br><br></br>
+    <div class="skills-row">
+       <div class="skills-column">
+          <h3 class="title">Education</h3>
+          <div class="skills-box">
+             <div class="skills-content">
+
+                
+                    <div class="content1">
+                        <div class="year"><i class='bx bxs-calender'></i>2017 - 2020</div>
+                            <h3>Degree - Mahatma Gandhi University</h3>
+                            <p>Bsc Mathematics</p>
+                        
+                </div><br></br>
+                <div class="content1">
+                    <div class="year"><i class='bx bxs-calender'></i>2015 - 2017</div>
+                    <h3>plus two - Higher Secondary Education Kerala</h3>
+                    <p>Biomaths</p>
+            </div><br></br>
+                <div class="content1">
+                    <div class="year"><i class='bx bxs-calender'></i>2015</div>
+                    <h3>SSLC - Kerala Board of Public Examinations</h3>
+                    <p>General</p>
+            </div><br></br>
+                
+             </div>
+          </div>
+       </div>
+       <div class="skills-column">
+          <h3 class="title">Skills</h3>
+          <div class="skills-box">
+             <div class="skills-content">
+                <div class="content1">
+                    <img src="html.png" class="html">
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="content1">
+                        <img src="python.png" class="python">
+                            <h3>PYTHON</h3> 
+                    </div>
+                         
+                        <div class="content1">
+                            <img src="mysql.png" class="mysql">
+                                <h3>MYSQL</h3>
+                              
+                        </div>
+                        <div class="content1">
+                            <img src="java.png" class="java">
+                                <h3>JAVA</h3>
+                               
+                        </div>
+                        <div class="content1">
+                            <img src="c.png" class="c">
+                                <h3>C</h3>
+                               
+                        </div>
+                        
+                        
+             </div>
+          </div>
+       </div>
+    
+    </div>
+</div><br></br><br></br><br></br>
+    <!--contact-->
+    <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+               <h1 class="sub-title">Contact Me</h1>
+               <p><i class="fa-solid fa-paper-plane"></i>avanisaju.999@gmail.com</p>
+               <p><i class="fa-solid fa-square-phone"></i>8078115048</p>
+               <div class="social-icons">
+                <a href="https://www.facebook.com/avaniavu.avu"><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://www.instagram.com/avanisaju/?r=nametag"><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://github.com/avanisaju"><i class="fa-brands fa-github"></i></a>
+               </div>
+            
+                </div>
+                <div class="contact-right">
+                    <form name="submit-to-google-sheet">
+                        <input type="text" name="Name" placeholder="your Name" required>
+                        <input type="text" name="Email" placeholder="your E-mail" required>
+                        <textarea name="Message" rows="6" placeholder="your Message"></textarea>
+                        <button type="submit" class="btn btn2">Submit</button>
+                    </form>
+                    <span id="msg"></span>
+                </div>
+            </div>
+        </div><br></br>
+        <div class="copyright">
+            <p>copyright @ AV</p>
+        </div>
+    </div>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzMMRkR21jq4gOsdhfqbY1yJSRq3Wr7HnstWsu0PdDjBCQYl738F4pCPhsxjrmEW_71/exec'
+        const form = document.forms['submit-to-google-sheet']
+        const msg = document.getElementById("msg")
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => {
+                msg.innerHTML = "Message sent successfully"
+                setTimeout(function(){
+                    msg.innerHTML = ""
+                },5000)
+                form.reset()
+            })
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
+ 
+ 
